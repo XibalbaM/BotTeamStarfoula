@@ -1,0 +1,2 @@
+# BotTeamStarfoula
+My discord bot
