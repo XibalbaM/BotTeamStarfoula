@@ -3,6 +3,7 @@ package fr.xibalba.botTeamStarfoula;
 import discord4j.core.DiscordClient;
 import discord4j.core.GatewayDiscordClient;
 import discord4j.core.event.domain.guild.MemberJoinEvent;
+import discord4j.core.event.domain.guild.MemberLeaveEvent;
 import discord4j.core.object.entity.User;
 import discord4j.gateway.intent.IntentSet;
 
@@ -23,7 +24,7 @@ public class Bot {
         //ReactionManager.init();
 
         client.on(MemberJoinEvent.class).subscribe(MemberListener::join);
-        //client.on(MemberLeaveEvent.class).subscribe(MemberListener::leave);
+        client.on(MemberLeaveEvent.class).subscribe(MemberListener::leave);
 
         //client.on(MessageCreateEvent.class).subscribe(MessageManager::onMessage);
 
